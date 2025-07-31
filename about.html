@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Horticulture Consultancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; }
+    .about-photo { object-fit: cover; width: 180px; height: 180px; border-radius: 50%; border: 4px solid #aed581; box-shadow: 0 2px 8px rgba(76,175,80,0.15); }
+    .about-section { background: #f4fbe9; border-radius: 1.2rem; padding: 2.5rem 2rem; margin-bottom: 2.5rem; }
+    .about-title { color: #388e3c; font-weight: 700; font-size: 2rem; margin-bottom: 1.2rem; }
+    .about-subtitle { color: #689f38; font-weight: 600; font-size: 1.2rem; margin-bottom: 1.2rem; }
+    .about-quote { font-style: italic; color: #388e3c; font-size: 1.15rem; border-left: 4px solid #aed581; padding-left: 1rem; margin: 1.5rem 0; }
+    .about-badge { background: #aed581; color: #333; font-weight: 600; border-radius: 0.7em; padding: 0.5em 1em; margin: 0.2em 0.3em 0.2em 0; display: inline-block; font-size: 1rem; }
+    .about-list { margin-bottom: 1.2rem; }
+    .about-list li { margin-bottom: 0.5rem; }
+    .about-section h4 { color: #388e3c; font-weight: 700; margin-top: 1.5rem; margin-bottom: 1rem; }
+    .about-offerings { margin-top: 2rem; }
+    .about-offerings .about-badge { font-size: 1.05rem; }
+    @media (max-width: 767px) {
+      .about-section { padding: 1.2rem 0.5rem; }
+      .about-title { font-size: 1.4rem; }
+    }
+    
+    /* Team Section Styles */
+    .team-card { 
+      border: none; 
+      border-radius: 1.2rem; 
+      box-shadow: 0 4px 20px rgba(76,175,80,0.12); 
+      transition: all 0.3s ease; 
+      cursor: pointer; 
+      background: #fff; 
+      overflow: hidden; 
+      min-height: 300px; /* Ensure minimum height */
+      display: block; /* Ensure display */
+    }
+    .team-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 8px 30px rgba(76,175,80,0.25); 
+      border: 2px solid #aed581; 
+    }
+    .team-photo { 
+      width: 120px; 
+      height: 120px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      border: 3px solid #aed581; 
+      box-shadow: 0 4px 12px rgba(76,175,80,0.2); 
+      transition: transform 0.3s ease; 
+      background: #e8f5e9; /* Fallback background */
+    }
+    .team-card:hover .team-photo { 
+      transform: scale(1.05); 
+    }
+    .team-card .card-title { 
+      color: #388e3c; 
+      font-weight: 700; 
+      font-size: 1.1rem; 
+      margin-bottom: 0.5rem; 
+    }
+    .team-card .card-text { 
+      color: #666; 
+      font-size: 0.95rem; 
+      line-height: 1.5; 
+    }
+    
+    /* Ensure team section is visible */
+    .team-section {
+      background: #f9f9f9;
+      padding: 2rem 0;
+      margin: 2rem 0;
+    }
+    
+    /* Perfect centering for team cards */
+    .team-section .row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+    
+    .team-section .col-lg-4 {
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* Debug styles to ensure visibility */
+    .row.g-4 {
+      display: flex !important;
+      flex-wrap: wrap !important;
+    }
+    .col-lg-4, .col-md-6 {
+      display: block !important;
+    }
+    
+    /* Modal Styles */
+    .modal-content { 
+      border-radius: 1.2rem; 
+      border: none; 
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15); 
+    }
+    .modal-header { 
+      background: #e8f5e9; 
+      border-bottom: 2px solid #aed581; 
+      border-radius: 1.2rem 1.2rem 0 0; 
+    }
+    .modal-title { 
+      color: #388e3c; 
+      font-weight: 700; 
+      font-size: 1.2rem; 
+    }
+    .modal-body { 
+      padding: 2rem; 
+    }
+    .modal-body h6 { 
+      color: #388e3c; 
+      font-weight: 700; 
+      margin-top: 1.5rem; 
+      margin-bottom: 0.8rem; 
+      font-size: 1.1rem; 
+    }
+    .modal-body ul { 
+      margin-bottom: 1.5rem; 
+    }
+    .modal-body li { 
+      margin-bottom: 0.5rem; 
+      color: #555; 
+      line-height: 1.4; 
+    }
+    .modal-body p { 
+      color: #666; 
+      line-height: 1.6; 
+      margin-bottom: 1rem; 
+    }
+    .modal-footer { 
+      background: #f8f9fa; 
+      border-top: 1px solid #dee2e6; 
+      border-radius: 0 0 1.2rem 1.2rem; 
+      padding: 1rem 2rem; 
+    }
+    .modal-footer .btn { 
+      border-radius: 0.7rem; 
+      font-weight: 600; 
+      padding: 0.6rem 1.2rem; 
+    }
+    
+    @media (max-width: 767px) {
+      .team-photo { 
+        width: 100px; 
+        height: 100px; 
+      }
+      .modal-body { 
+        padding: 1.5rem; 
+      }
+      .modal-footer { 
+        padding: 1rem; 
+      }
+      .team-card .card-title { 
+        font-size: 1rem; 
+      }
+      .team-card .card-text { 
+        font-size: 0.9rem; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: #4caf50;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">HortiConsult</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container py-5">
+    <!-- Quick Navigation to Team -->
+    <div class="text-center mb-5">
+      <a href="#team-section" class="btn btn-outline-success btn-lg" style="border-radius: 2rem; padding: 0.8rem 2rem; font-weight: 600; text-decoration: none;">
+        👥 Meet Our Expert Team
+      </a>
+    </div>
+
+    <!-- CEO Profile Section -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="about-photo.jpg" alt="Dr. Chenna Reddy Aswath" class="about-photo shadow" id="about-photo">
+        <div class="mt-3">
+          <span class="badge bg-success fs-6 px-3 py-2">CEO & Founder</span>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h1 class="display-5 fw-bold text-success mb-3">Dr. Chenna Reddy Aswath</h1>
+        <h3 class="text-muted mb-3">CEO, Krishika Consultancy</h3>
+        <h5 class="text-success mb-4">Former- Principal Scientist, ICAR-IIHR -Bangalore </h5>
+        <p class="lead">Leading horticulture innovation for over 35 years, transforming sustainable Horticulture across India and beyond.</p>
+      </div>
+    </div>
+
+    <!-- Key Highlights -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <span style="font-size: 3rem;">🏆</span>
+            </div>
+            <h5 class="card-title text-success fw-bold">35+ Years Experience and 500+ Project</h5>
+            <p class="card-text">Pioneering research and innovation in horticulture science and Successfully delivered across India and internationally</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <span style="font-size: 3rem;">🎓</span>
+            </div>
+            <h5 class="card-title text-success fw-bold">Former- Head,Division of BioTechnology</h5>
+            <h5 class="card-title text-success fw-bold"> Division of Flower and  Medicinal crops</h5>
+            <p class="card-text">ICAR - Indian Institute of Horticultural Research (IIHR)</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <span style="font-size: 3rem;">🌱</span>
+            </div>
+            <h5 class="card-title text-success fw-bold">🌏 Global Research Footprint</h5>
+            <h5 class="card-title text-success fw-bold">Visiting Scientist – South Korea | INSA-JSPS Fellow – Japan</h5>
+            <p class="card-text">Proud to have served as a Visiting Scientist at KOFST, South Korea, and honored to be awarded the prestigious INSA-JSPS Fellowship, completing collaborative research projects in Japan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission Statement -->
+    <div class="bg-light rounded-3 p-5 mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h3 class="text-success fw-bold mb-3">Our Mission</h3>
+          <p class="lead mb-0">"To democratize horticulture knowledge and make sustainable farming accessible to every household, farmer, and agripreneur across India."</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <span style="font-size: 4rem;">🌿</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brief Bio -->
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h4 class="text-success fw-bold mb-4">About Dr. Aswath</h4>
+        <p class="mb-4">Dr. Chenna Reddy Aswath is a visionary leader in Indian horticulture, having served as Principal Scientist at ICAR-IIHR for over three decades. His groundbreaking research in sustainable agriculture, urban gardening, and organic farming has revolutionized how we approach horticulture in India.</p>
+        
+        <p class="mb-4">As the CEO of Krishika Consultancy, Dr. Aswath leads a team of expert horticulturists, scientists, and specialists dedicated to bringing cutting-edge agricultural solutions to farmers, urban gardeners, and agribusinesses. His expertise spans from traditional farming methods to modern technologies like hydroponics and vertical farming.</p>
+        
+        <p class="mb-4">Beyond his scientific contributions, Dr. Aswath is a passionate educator and community leader. He serves as President of the Lions Club, Bangalore Agara chapter, and has established educational programs that have trained thousands of students in sustainable agriculture practices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team Section -->
+  <section id="team-section" class="container py-5 team-section">
+    <div class="text-center mb-5">
+      <h2 class="about-title">👥 Our Expert Team</h2>
+      <p class="about-subtitle">Meet the specialists behind our horticulture consultancy success</p>
+    </div>
+    
+    <!-- First Row: 3 cards -->
+    <div class="row g-4 justify-content-center mb-4">
+      <!-- Team Member 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal1">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              👨‍🔬
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Dr. Y.T.N. Reddy</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Orchard Management Specialist</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">Expert in orchard planning, maintenance, and commercial fruit production with 25+ years of field experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal2">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              🧬
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Dr. Uma S.</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Plant Biotechnologist & Bioreactor Expert</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">Pioneering research in plant tissue culture and bioreactor technology for commercial plant propagation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal3">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              🌱
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Dr. Yogesha</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Seed Technology Scientist</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">Specialist in seed quality enhancement, storage technology, and developing high-yield seed varieties.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row: 3 cards -->
+    <div class="row g-4 justify-content-center mb-4">
+      <!-- Team Member 4 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal4">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              🌸
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Mr. Yatish Reddy</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Flower Polyhouse Construction & Marketing</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">Expert in commercial flower cultivation, polyhouse design, and market strategy for floriculture businesses.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 5 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal5">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              💧
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Mr. Bharath</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Hydroponics & Aeroponics Specialist</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">Leading expert in soil-less farming technologies, system design, and urban agriculture solutions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 6 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal6">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              🥬
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Dr. Aghor</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Vegetable Science Expert</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">Specialist in vegetable cultivation, pest management, and organic farming practices for commercial production.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Row: 2 cards centered -->
+    <div class="row g-4 justify-content-center mb-4">
+      <!-- Team Member 7 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal7">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              🌿
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Mr. Naveen</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Landscapist & Garden Architect</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">Creative designer specializing in residential and commercial landscape planning with sustainable practices.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 8 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal8">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              🥥
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Dr. Vijay Kumar Hallikeri</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Former Deputy Director, Coconut Development Board</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">Renowned expert in coconut cultivation, processing technologies, and tropical crop management.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Additional Team Members Row -->
+    <div class="row g-4 justify-content-center mt-4">
+      <!-- Team Member 9 (Placeholder) -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal9">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              🚀
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Coming Soon</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Expert Position</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">We're expanding our team with more specialists to serve you better. Stay tuned for updates!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 10 (Placeholder) -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: #fff; border: 2px solid #aed581; border-radius: 1.2rem; box-shadow: 0 4px 20px rgba(76,175,80,0.12); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#teamModal10">
+          <div class="card-body text-center p-4">
+            <div style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #aed581; margin: 0 auto 1rem; background: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+              🚀
+            </div>
+            <h5 class="card-title" style="color: #388e3c; font-weight: 700; margin-bottom: 0.5rem;">Coming Soon</h5>
+            <p class="text-muted mb-2" style="font-weight: 600;">Expert Position</p>
+            <p class="card-text" style="color: #666; line-height: 1.5;">We're expanding our team with more specialists to serve you better. Stay tuned for updates!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Team Member Modals -->
+  
+  <!-- Modal 1: Dr. Y.T.N. Reddy -->
+  <div class="modal fade" id="teamModal1" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Dr. Y.T.N. Reddy - Orchard Management Specialist</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Dr. Y.T.N. Reddy">
+            </div>
+            <div class="col-md-8">
+              <h6>🌳 Specialties:</h6>
+              <ul>
+                <li>Commercial orchard planning and establishment</li>
+                <li>Fruit tree pruning and training techniques</li>
+                <li>Disease and pest management in orchards</li>
+                <li>Harvest optimization and post-harvest handling</li>
+                <li>Organic orchard management practices</li>
+              </ul>
+              
+              <h6>🛠️ Key Services:</h6>
+              <ul>
+                <li>Orchard site selection and soil preparation</li>
+                <li>Variety selection and planting strategies</li>
+                <li>Irrigation system design and management</li>
+                <li>Fertilization and nutrition programs</li>
+                <li>Yield forecasting and market planning</li>
+              </ul>
+              
+              <h6>💡 How This Benefits You:</h6>
+              <p>Maximize your orchard's productivity with proven scientific methods. Dr. Reddy's expertise ensures optimal tree health, higher yields, and better market returns for your fruit cultivation business.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Book a Video Consultation</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Dr. Uma S. -->
+  <div class="modal fade" id="teamModal2" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Dr. Uma S. - Plant Biotechnologist & Bioreactor Expert</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Dr. Uma S.">
+            </div>
+            <div class="col-md-8">
+              <h6>🧬 Specialties:</h6>
+              <ul>
+                <li>Plant tissue culture and micropropagation</li>
+                <li>Bioreactor technology for mass plant production</li>
+                <li>Genetic improvement and breeding techniques</li>
+                <li>Disease-free plant material development</li>
+                <li>Commercial scale-up of tissue culture</li>
+              </ul>
+              
+              <h6>🛠️ Key Services:</h6>
+              <ul>
+                <li>Laboratory setup for tissue culture</li>
+                <li>Protocol development for new plant varieties</li>
+                <li>Bioreactor system design and optimization</li>
+                <li>Quality control and certification</li>
+                <li>Technology transfer and training</li>
+              </ul>
+              
+              <h6>💡 How This Benefits You:</h6>
+              <p>Access cutting-edge biotechnology for rapid plant multiplication, disease-free planting material, and commercial-scale production. Perfect for nurseries and large-scale cultivation projects.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Book a Video Consultation</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Dr. Yogesha -->
+  <div class="modal fade" id="teamModal3" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Dr. Yogesha - Seed Technology Scientist</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Dr. Yogesha">
+            </div>
+            <div class="col-md-8">
+              <h6>🌱 Specialties:</h6>
+              <ul>
+                <li>Seed quality assessment and enhancement</li>
+                <li>Seed storage and preservation technology</li>
+                <li>Seed treatment and coating techniques</li>
+                <li>Germination improvement methods</li>
+                <li>Seed certification and testing</li>
+              </ul>
+              
+              <h6>🛠️ Key Services:</h6>
+              <ul>
+                <li>Seed quality testing and certification</li>
+                <li>Storage facility design and management</li>
+                <li>Seed treatment protocol development</li>
+                <li>Germination enhancement techniques</li>
+                <li>Seed bank establishment and maintenance</li>
+              </ul>
+              
+              <h6>💡 How This Benefits You:</h6>
+              <p>Ensure optimal seed quality, better germination rates, and longer storage life. Essential for seed companies, nurseries, and farmers looking to maximize crop establishment success.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Book a Video Consultation</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Mr. Yatish Reddy -->
+  <div class="modal fade" id="teamModal4" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Mr. Yatish Reddy - Flower Polyhouse Construction & Marketing</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Mr. Yatish Reddy">
+            </div>
+            <div class="col-md-8">
+              <h6>🌸 Specialties:</h6>
+              <ul>
+                <li>Commercial flower cultivation systems</li>
+                <li>Polyhouse design and construction</li>
+                <li>Floriculture business planning</li>
+                <li>Market analysis and export strategies</li>
+                <li>Climate control and automation</li>
+              </ul>
+              
+              <h6>🛠️ Key Services:</h6>
+              <ul>
+                <li>Polyhouse design and construction</li>
+                <li>Flower cultivation planning and setup</li>
+                <li>Market research and business planning</li>
+                <li>Export documentation and compliance</li>
+                <li>Technology integration and automation</li>
+              </ul>
+              
+              <h6>💡 How This Benefits You:</h6>
+              <p>Build a profitable floriculture business with proper infrastructure, market insights, and export opportunities. From construction to market access, get complete guidance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Request a Quote</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Mr. Bharath -->
+  <div class="modal fade" id="teamModal5" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Mr. Bharath - Hydroponics & Aeroponics Specialist</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Mr. Bharath">
+            </div>
+            <div class="col-md-8">
+              <h6>💧 Specialties:</h6>
+              <ul>
+                <li>Hydroponic system design and installation</li>
+                <li>Aeroponic technology and applications</li>
+                <li>Nutrient solution management</li>
+                <li>Urban farming solutions</li>
+                <li>Automated growing systems</li>
+              </ul>
+              
+              <h6>🛠️ Key Services:</h6>
+              <ul>
+                <li>System design and installation</li>
+                <li>Nutrient formulation and management</li>
+                <li>Automation and monitoring setup</li>
+                <li>Urban farming project planning</li>
+                <li>Training and maintenance support</li>
+              </ul>
+              
+              <h6>💡 How This Benefits You:</h6>
+              <p>Grow fresh produce year-round without soil, using less water and space. Perfect for urban areas, commercial production, and sustainable farming initiatives.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Book a Video Consultation</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Dr. Aghor -->
+  <div class="modal fade" id="teamModal6" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Dr. Aghor - Vegetable Science Expert</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Dr. Aghor">
+            </div>
+            <div class="col-md-8">
+              <h6>🥬 Specialties:</h6>
+              <ul>
+                <li>Commercial vegetable production</li>
+                <li>Organic farming practices</li>
+                <li>Pest and disease management</li>
+                <li>Protected cultivation techniques</li>
+                <li>Post-harvest handling</li>
+              </ul>
+              
+              <h6>🛠️ Key Services:</h6>
+              <ul>
+                <li>Crop planning and rotation strategies</li>
+                <li>Organic certification guidance</li>
+                <li>IPM (Integrated Pest Management)</li>
+                <li>Greenhouse vegetable production</li>
+                <li>Market-oriented cultivation</li>
+              </ul>
+              
+              <h6>💡 How This Benefits You:</h6>
+              <p>Maximize vegetable yields with sustainable practices, reduce chemical inputs, and access premium markets with organic certification. Ideal for commercial vegetable farmers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Book a Video Consultation</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: Mr. Naveen -->
+  <div class="modal fade" id="teamModal7" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Mr. Naveen - Landscapist & Garden Architect</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Mr. Naveen">
+            </div>
+            <div class="col-md-8">
+              <h6>🌿 Specialties:</h6>
+              <ul>
+                <li>Residential and commercial landscaping</li>
+                <li>Sustainable garden design</li>
+                <li>Water-efficient landscaping</li>
+                <li>Native plant integration</li>
+                <li>Outdoor living space design</li>
+              </ul>
+              
+              <h6>🛠️ Key Services:</h6>
+              <ul>
+                <li>Landscape design and planning</li>
+                <li>Garden construction and installation</li>
+                <li>Irrigation system design</li>
+                <li>Maintenance planning and training</li>
+                <li>Eco-friendly landscaping solutions</li>
+              </ul>
+              
+              <h6>💡 How This Benefits You:</h6>
+              <p>Transform your space into a beautiful, functional, and sustainable landscape. Increase property value while creating a relaxing environment that's easy to maintain.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Request a Quote</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8: Dr. Vijay Kumar Hallikeri -->
+  <div class="modal fade" id="teamModal8" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Dr. Vijay Kumar Hallikeri - Former Deputy Director, Coconut Development Board</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Dr. Vijay Kumar Hallikeri">
+            </div>
+            <div class="col-md-8">
+              <h6>🥥 Specialties:</h6>
+              <ul>
+                <li>Coconut cultivation and management</li>
+                <li>Tropical crop production</li>
+                <li>Processing technology and value addition</li>
+                <li>Export market development</li>
+                <li>Government policy and regulations</li>
+              </ul>
+              
+              <h6>🛠️ Key Services:</h6>
+              <ul>
+                <li>Coconut plantation establishment</li>
+                <li>Processing unit setup and optimization</li>
+                <li>Export documentation and compliance</li>
+                <li>Value-added product development</li>
+                <li>Policy guidance and subsidies</li>
+              </ul>
+              
+              <h6>💡 How This Benefits You:</h6>
+              <p>Leverage decades of government experience and industry connections for successful coconut farming and processing businesses. Access subsidies, markets, and technical support.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Book a Video Consultation</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9: Placeholder -->
+  <div class="modal fade" id="teamModal9" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Coming Soon - New Team Member</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Coming Soon">
+            </div>
+            <div class="col-md-8">
+              <h6>🚀 We're Growing Our Team!</h6>
+              <p>We're constantly expanding our expert team to provide you with even more specialized services. Stay tuned for updates on our newest team members and their expertise areas.</p>
+              
+              <h6>📧 Stay Updated:</h6>
+              <p>Contact us to be notified when new specialists join our team, or to request specific expertise areas you'd like us to cover.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Contact Us</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">View Current Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10: Placeholder -->
+  <div class="modal fade" id="teamModal10" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Coming Soon - New Team Member</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80" class="team-photo mb-3" alt="Coming Soon">
+            </div>
+            <div class="col-md-8">
+              <h6>🚀 We're Growing Our Team!</h6>
+              <p>We're constantly expanding our expert team to provide you with even more specialized services. Stay tuned for updates on our newest team members and their expertise areas.</p>
+              
+              <h6>📧 Stay Updated:</h6>
+              <p>Contact us to be notified when new specialists join our team, or to request specific expertise areas you'd like us to cover.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="window.location.href='contact.html'">Contact Us</button>
+          <button type="button" class="btn btn-outline-success" onclick="window.location.href='services.html'">View Current Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-5">
+    <div class="text-center py-3" style="background:#8d6e63; color:#fff;">&copy; 2024 HortiConsult. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    gsap.from("#about-photo", {duration: 1, x: -60, opacity: 0, ease: "power2.out"});
+    gsap.from(".about-title", {duration: 1, y: -30, opacity: 0, delay: 0.2, ease: "power2.out"});
+    gsap.from(".about-section", {duration: 1, y: 40, opacity: 0, delay: 0.4, ease: "power2.out"});
+    
+    // GSAP Animations for Team Section
+    gsap.from(".team-card", {
+      duration: 1, 
+      y: 50, 
+      opacity: 0, 
+      stagger: 0.15, 
+      delay: 0.6, 
+      ease: "power2.out"
+    });
+  </script>
+</body>
+</html> 

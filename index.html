@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Horticulture Consultancy | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <!-- Use Bootstrap for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; }
+    .service-img { object-fit: cover; height: 320px; border-radius: 1rem; }
+    .why-icon { font-size: 2rem; color: var(--primary-green); margin-right: 0.5rem; }
+    
+    /* Card hover effects for Why Choose Us section */
+    .card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+    }
+    
+    .card .why-icon {
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover .why-icon {
+      transform: scale(1.1);
+    }
+    .client-icon { font-size: 2.5rem; }
+    .testimonial-quote { font-style: italic; color: #388e3c; }
+    .carousel-img { object-fit: cover; height: 350px; border-radius: 1rem; }
+    .consult-btn { min-width: 160px; margin: 0.5rem; }
+    .section-bg { background: #f4fbe9; border-radius: 1rem; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">HortiConsult</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center">
+    <div class="container hero-content text-center">
+      <h1 class="display-4 fw-bold" id="hero-title">Grow with the Experts</h1>
+      <p class="lead" id="hero-lead">Professional Horticulture Consultancy for Urban Gardeners, Farmers, and Agripreneurs</p>
+      <a href="#consultation" class="btn btn-lg btn-success mt-3" id="hero-cta">Book a Consultation</a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="container py-5">
+    <div class="section-bg p-4">
+      <h2 class="section-title text-center mb-5">🌟 We're India's First Full-Spectrum Horticulture Solutions Hub</h2>
+      <div class="row g-4">
+        <div class="col-lg-6 col-md-6">
+          <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); transition: transform 0.3s ease;">
+            <div class="card-body text-center p-4">
+              <div class="why-icon mb-3" style="font-size: 3rem;">🚀</div>
+              <h4 class="card-title mb-3" style="color: var(--primary-green); font-weight: 700;">End-to-End Expertise</h4>
+              <p class="card-text" style="color: var(--text-light); line-height: 1.6;">From home gardens to mega agro-projects, we offer tailored support for every scale — residential, institutional, commercial, and export-oriented horticulture ventures.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); transition: transform 0.3s ease;">
+            <div class="card-body text-center p-4">
+              <div class="why-icon mb-3" style="font-size: 3rem;">👨‍🔬👨‍🌾</div>
+              <h4 class="card-title mb-3" style="color: var(--primary-green); font-weight: 700;">Science-Driven, Farmer-Focused</h4>
+              <p class="card-text" style="color: var(--text-light); line-height: 1.6;">Powered by top scientists, field experts, and international research collaborations, our solutions blend modern science with practical insights.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); transition: transform 0.3s ease;">
+            <div class="card-body text-center p-4">
+              <div class="why-icon mb-3" style="font-size: 3rem;">🛠️</div>
+              <h4 class="card-title mb-3" style="color: var(--primary-green); font-weight: 700;">Everything Under One Roof</h4>
+              <p class="card-text" style="color: var(--text-light); line-height: 1.6;">Seeds, cocopeat, grow bags, fertigation systems, farm layout planning — you name it, we provide it. No more searching across vendors.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); transition: transform 0.3s ease;">
+            <div class="card-body text-center p-4">
+              <div class="why-icon mb-3" style="font-size: 3rem;">🌍</div>
+              <h4 class="card-title mb-3" style="color: var(--primary-green); font-weight: 700;">Bridging Local Roots with Global Vision</h4>
+              <p class="card-text" style="color: var(--text-light); line-height: 1.6;">With experience in South Korea, Japan, and India's top agri-research centers, we bring global best practices to your soil.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section: Alternating Image/Text Cards -->
+  <section class="container py-5">
+    <h2 class="section-title text-center mb-5">Our Services</h2>
+    <!-- Service 1: Terrace Gardening -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Terrace Gardening" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Terrace Gardening</h3>
+        <p>Create lush rooftop gardens with our expert design, plant selection, soil management, and ongoing care. We help you transform unused terraces into productive, beautiful green spaces for relaxation and food production.</p>
+      </div>
+    </div>
+    <!-- Service 2: Vertical Gardening -->
+    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1707586387441-c6657a1dfeae?auto=format&fit=crop&w=800&q=80" alt="Vertical Gardening" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Vertical Gardening</h3>
+        <p>Maximize your space with innovative vertical garden systems for balconies, walls, and small yards. We design, install, and maintain vertical gardens that are both functional and visually stunning.</p>
+      </div>
+    </div>
+    <!-- Service 3: Hydroponics -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80" alt="Hydroponics" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Hydroponics (Soil-less Farming)</h3>
+        <p>Grow plants in nutrient-rich water channels for faster growth and higher yields. We provide complete hydroponic solutions for homes and commercial setups, including system design, installation, and training.</p>
+      </div>
+    </div>
+    <!-- Service 4: Orchard Development -->
+    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=800&q=80" alt="Orchard Development" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Orchard Development</h3>
+        <p>From land assessment to planting and management, we help you establish productive orchards for fruits and nuts. Our services include crop selection, layout planning, and sustainable orchard care.</p>
+      </div>
+    </div>
+    <!-- Service 5: Polyhouse Cultivation -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fd9?auto=format&fit=crop&w=800&q=80" alt="Polyhouse Cultivation" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Polyhouse Cultivation</h3>
+        <p>Set up and manage polyhouses (greenhouse tunnels) for year-round, high-value crop production. We offer design, construction, crop planning, and climate control solutions for flowers and vegetables.</p>
+      </div>
+    </div>
+    <!-- Service 6: Organic Cultivation -->
+    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80" alt="Organic Cultivation" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Organic Cultivation</h3>
+        <p>Adopt organic farming practices for fruits, vegetables, flowers, and medicinal crops. We guide you on certification, soil health, pest management, and organic input sourcing for healthy, chemical-free produce.</p>
+      </div>
+    </div>
+    <!-- Service 7: Crop Planning -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Crop Planning" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Crop Planning</h3>
+        <p>Maximize your yield and profitability with scientific crop planning. We analyze your land, climate, and goals to recommend the best crop rotations, planting schedules, and resource management strategies.</p>
+      </div>
+    </div>
+    <!-- Service 8: Pest & Disease Management -->
+    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" alt="Pest and Disease Management" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Pest & Disease Management</h3>
+        <p>Protect your crops with integrated pest and disease management solutions. We offer diagnosis, prevention, and eco-friendly treatment plans for healthy, resilient plants.</p>
+      </div>
+    </div>
+    <!-- Service 9: Irrigation & Fertigation Systems -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Irrigation and Fertigation Systems" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Irrigation & Fertigation Systems</h3>
+        <p>Design and implement efficient irrigation and fertigation systems for optimal water and nutrient delivery. We provide drip, sprinkler, and automated solutions tailored to your needs.</p>
+      </div>
+    </div>
+    <!-- Service 10: Market Intelligence -->
+    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Market Intelligence" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>Market Intelligence</h3>
+        <p>Stay ahead with market analysis, price forecasting, and demand trends. We help you make informed decisions for better profitability and risk management.</p>
+      </div>
+    </div>
+    <!-- Service 11: Export/Import Advisory -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Export/Import Advisory" class="img-fluid service-img shadow">
+      </div>
+      <div class="col-lg-6">
+        <h3>✨ Bridging Innovation to the Field</h3>
+        <p>We act as facilitators, bringing cutting-edge technologies and solutions from ICAR and other leading government organizations directly to farmers, growers, and agribusinesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Types Section -->
+  <section class="container py-5">
+    <h2 class="section-title text-center mb-4">Who We Serve</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3 col-6 text-center">
+        <div class="client-icon mb-2">🏠</div>
+        <h6>Urban Home Gardeners</h6>
+      </div>
+      <div class="col-md-3 col-6 text-center">
+        <div class="client-icon mb-2">🧑‍🌾</div>
+        <h6>Farmers & Agripreneurs</h6>
+      </div>
+      <div class="col-md-3 col-6 text-center">
+        <div class="client-icon mb-2">🌍</div>
+        <h6>Exporters & Traders</h6>
+      </div>
+      <div class="col-md-3 col-6 text-center">
+        <div class="client-icon mb-2">🏫</div>
+        <h6>Institutions & Schools</h6>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Modes Section -->
+  <section class="container py-5" id="consultation">
+    <div class="section-bg p-4">
+      <h2 class="section-title text-center mb-4">Consultation Modes</h2>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-5 text-center mb-3 mb-md-0">
+          <div class="mb-2" style="font-size:2rem;">📍</div>
+          <h5>In-Person Consultation</h5>
+          <p>Available based on your location. Get hands-on, site-specific advice and planning.</p>
+          <a href="contact.html" class="btn btn-success consult-btn">Book Now</a>
+        </div>
+        <div class="col-md-5 text-center">
+          <div class="mb-2" style="font-size:2rem;">📹</div>
+          <h5>Video Consultation (Paid)</h5>
+          <p>Connect with our experts from anywhere. Get personalized guidance via video call.</p>
+          <a href="contact.html" class="btn btn-primary consult-btn">Book Now</a>
+          <a href="contact.html" class="btn btn-warning consult-btn">Pay Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="container py-5">
+    <h2 class="section-title text-center mb-4">Testimonials</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <div class="testimonial-quote mb-2">“Thanks to HortiConsult, my terrace is now a lush, productive garden. The team’s advice was spot on!”</div>
+          <div class="text-end">— Priya S., Bengaluru</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <div class="testimonial-quote mb-2">“Our polyhouse yields have doubled. The scientific approach and support are unmatched.”</div>
+          <div class="text-end">— Ramesh K., Farmer</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <div class="testimonial-quote mb-2">“The export advisory helped us break into new markets. Highly recommended!”</div>
+          <div class="text-end">— GreenLeaf Exports</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Carousel -->
+  <section class="container py-5">
+    <h2 class="section-title text-center mb-4">Success Stories</h2>
+    <div id="successCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=900&q=80" class="d-block w-100 carousel-img" alt="Project 1">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Urban Terrace Transformation</h5>
+            <p>From concrete to green oasis in 3 months.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=900&q=80" class="d-block w-100 carousel-img" alt="Project 2">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Polyhouse Success</h5>
+            <p>Year-round flower production for a local entrepreneur.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=900&q=80" class="d-block w-100 carousel-img" alt="Project 3">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Hydroponics for Schools</h5>
+            <p>Hands-on learning and fresh produce for students.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#successCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#successCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2024 HortiConsult. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    // GSAP Animations for Hero Section
+    gsap.from("#hero-title", {duration: 1, y: -50, opacity: 0, ease: "power2.out"});
+    gsap.from("#hero-lead", {duration: 1, y: 50, opacity: 0, delay: 0.3, ease: "power2.out"});
+    gsap.from("#hero-cta", {duration: 1, scale: 0.5, opacity: 0, delay: 0.6, ease: "back.out(1.7)"});
+    // GSAP Animations for Service Sections
+    gsap.utils.toArray('.service-img').forEach((img, i) => {
+      gsap.from(img, {duration: 1, x: i % 2 === 0 ? -80 : 80, opacity: 0, delay: 1 + i * 0.2, ease: "power2.out"});
+    });
+    gsap.utils.toArray('.section-title').forEach((el, i) => {
+      gsap.from(el, {duration: 1, y: -30, opacity: 0, delay: 0.5 + i * 0.2, ease: "power2.out"});
+    });
+  </script>
+</body>
+</html> 
