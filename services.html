@@ -2,32 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Service Catalog | Horticulture Consultancy</title>
+  <title>Services | Horticulture Consultancy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static@0.321.0/font/lucide.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; background: #f4fbe9; }
-    .service-card { border: none; border-radius: 1.5rem; box-shadow: 0 4px 24px rgba(76,175,80,0.10); transition: transform 0.22s, box-shadow 0.22s; background: #fff; margin-bottom: 2.5rem; padding-bottom: 0.5rem; }
-    .service-card:hover { transform: translateY(-12px) scale(1.04); box-shadow: 0 10px 32px rgba(76,175,80,0.22); border: 2px solid #aed581; }
-    .service-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 1.5rem 1.5rem 0 0; background: #e8f5e9; border-bottom: 3px solid #aed581; }
-    .service-emoji { font-size: 2.5rem; margin-right: 0.7rem; }
-    .card-title { font-size: 1.25rem; font-weight: 700; color: #388e3c; }
-    .badge { background: #aed581; color: #333; font-weight: 600; margin-right: 0.3rem; font-size: 0.98rem; padding: 0.5em 0.9em; border-radius: 0.7em; }
-    .price { color: #388e3c; font-weight: 700; font-size: 1.15rem; margin-bottom: 0.7rem; }
-    .book-btn { background: #4caf50; color: #fff; border: none; border-radius: 0.7rem; transition: background 0.2s, box-shadow 0.2s; font-size: 1.08rem; font-weight: 600; padding: 0.7em 0; margin-top: 0.7rem; box-shadow: 0 2px 8px rgba(76,175,80,0.10); }
-    .book-btn:hover { background: #81c784; color: #222; box-shadow: 0 4px 16px rgba(76,175,80,0.18); }
-    .modal-header { background: #e8f5e9; }
-    .modal-title { color: #388e3c; }
-    .card-body { padding: 2rem 1.5rem 1.2rem 1.5rem; }
-    .row.g-4 { --bs-gutter-x: 2.5rem; --bs-gutter-y: 2.5rem; }
+    .service-card {
+      border: none;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(46,125,50,0.10);
+      background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%);
+      margin-bottom: 2.5rem;
+      transition: box-shadow 0.22s, background 0.22s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card:hover {
+      box-shadow: 0 10px 32px rgba(46,125,50,0.22);
+      background: linear-gradient(135deg, #a5d6a7 0%, #66bb6a 100%);
+    }
+    .card-title { font-size: 1.25rem; font-weight: 700; color: #1b5e20; }
+    .card-text { min-height: 48px; color: #2e7d32; }
+    .learn-btn {
+      background: #388e3c;
+      color: #fff;
+      border: none;
+      border-radius: 0.7rem;
+      font-size: 1.08rem;
+      font-weight: 600;
+      padding: 0.7em 0;
+      margin-top: 0.7rem;
+      width: 100%;
+      transition: background 0.2s, color 0.2s;
+    }
+    .learn-btn:hover {
+      background: #66bb6a;
+      color: #222;
+    }
+    @media (max-width: 991px) {
+      .col-lg-4 { flex: 0 0 auto; width: 50%; }
+    }
     @media (max-width: 767px) {
-      .card-body { padding: 1.2rem 0.7rem 1rem 0.7rem; }
-      .service-card { margin-bottom: 2rem; }
-      .row.g-4 { --bs-gutter-x: 1rem; --bs-gutter-y: 1.5rem; }
+      .col-lg-4, .col-md-6 { flex: 0 0 auto; width: 100%; }
+    }
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
     }
   </style>
 </head>
@@ -52,186 +78,22 @@
   </nav>
 
   <section class="container py-5">
-    <h2 class="section-title text-center mb-5" style="color:#388e3c; font-weight:700;">Our Service Catalog</h2>
-    <div class="row g-4" id="service-cards">
-      <!-- Service 1 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80" class="service-img" alt="Terrace Gardening">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">🪴</span><h5 class="card-title mb-0">Terrace Gardening Setup</h5></div>
-            <div class="price mb-2">₹2,000 <span class="text-muted" style="font-size:0.9rem;">(Consultation only)</span></div>
-            <p class="card-text">Personalized layout planning, container selection, soil mix, plant selection & maintenance tips for urban terrace spaces.</p>
-            <div class="mb-2">
-              <span class="badge">Urban Gardening</span>
-              <span class="badge">Organic Terrace Garden</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="Terrace Gardening Setup">Book Now</button>
-          </div>
-        </div>
-      </div>
-      <!-- Service 2 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="service-img" alt="Vertical Gardening">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">🌿</span><h5 class="card-title mb-0">Vertical Gardening Consultation</h5></div>
-            <div class="price mb-2">₹2,500</div>
-            <p class="card-text">Design and planning of vertical garden walls for homes, offices, and balconies using organic methods.</p>
-            <div class="mb-2">
-              <span class="badge">Wall Garden</span>
-              <span class="badge">Space-saving Greens</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="Vertical Gardening Consultation">Book Now</button>
-          </div>
-        </div>
-      </div>
-      <!-- Service 3 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" class="service-img" alt="Hydroponics">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">💧</span><h5 class="card-title mb-0">Hydroponics Design & Guidance</h5></div>
-            <div class="price mb-2">₹4,000</div>
-            <p class="card-text">Get a complete hydroponic growing system plan – includes equipment guidance, nutrient schedule, and starter training.</p>
-            <div class="mb-2">
-              <span class="badge">Soil-less farming</span>
-              <span class="badge">Urban Hydroponics</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="Hydroponics Design & Guidance">Book Now</button>
-          </div>
-        </div>
-      </div>
-      <!-- Service 4 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fd9?auto=format&fit=crop&w=400&q=80" class="service-img" alt="Polyhouse Flower Cultivation">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">🌸</span><h5 class="card-title mb-0">Polyhouse Flower Cultivation</h5></div>
-            <div class="price mb-2">₹5,000 <span class="text-muted" style="font-size:0.9rem;">(per plan)</span></div>
-            <p class="card-text">Design and planning of polyhouses for flowers like roses, gerbera, marigold. Includes layout, climate control tips & pest prevention.</p>
-            <div class="mb-2">
-              <span class="badge">Protected Cultivation</span>
-              <span class="badge">Polyhouse</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="Polyhouse Flower Cultivation">Book Now</button>
-          </div>
-        </div>
-      </div>
-      <!-- Service 5 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=400&q=80" class="service-img" alt="Orchard Development Plan">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">🍇</span><h5 class="card-title mb-0">Orchard Development Plan</h5></div>
-            <div class="price mb-2">₹6,000 <span class="text-muted" style="font-size:0.9rem;">(based on land area)</span></div>
-            <p class="card-text">End-to-end orchard planning for mango, guava, banana, etc. Includes soil prep, crop spacing, irrigation & pest management.</p>
-            <div class="mb-2">
-              <span class="badge">Fruit Farming</span>
-              <span class="badge">High Yield Farming</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="Orchard Development Plan">Book Now</button>
-          </div>
-        </div>
-      </div>
-      <!-- Service 6 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400&q=80" class="service-img" alt="Pest & Disease Control Advisory">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">🐛</span><h5 class="card-title mb-0">Pest & Disease Control Advisory</h5></div>
-            <div class="price mb-2">₹499 <span class="text-muted" style="font-size:0.9rem;">(Video call)</span></div>
-            <p class="card-text">Identify and treat pest/disease problems in fruits, vegetables, flowers. Organic or IPM options available.</p>
-            <div class="mb-2">
-              <span class="badge">Organic Pest Control</span>
-              <span class="badge">Plant Health</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="Pest & Disease Control Advisory">Book Now</button>
-          </div>
-        </div>
-      </div>
-      <!-- Service 7 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80" class="service-img" alt="Organic Crop Planning">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">🌾</span><h5 class="card-title mb-0">Organic Crop Planning</h5></div>
-            <div class="price mb-2">₹2,000</div>
-            <p class="card-text">Plan your seasonal crop cycle using organic inputs for vegetables, herbs, and medicinal plants.</p>
-            <div class="mb-2">
-              <span class="badge">Organic Farming</span>
-              <span class="badge">Medicinal Plants</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="Organic Crop Planning">Book Now</button>
-          </div>
-        </div>
-      </div>
-      <!-- Service 8 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" class="service-img" alt="Export & Import Support">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">🌍</span><h5 class="card-title mb-0">Export & Import Support</h5></div>
-            <div class="price mb-2">₹7,500 <span class="text-muted" style="font-size:0.9rem;">(Full advisory)</span></div>
-            <p class="card-text">Get expert guidance for exporting/importing horticultural products – compliance, packaging, sourcing & buyer identification.</p>
-            <div class="mb-2">
-              <span class="badge">Agri Export</span>
-              <span class="badge">Horticulture Trade</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="Export & Import Support">Book Now</button>
-          </div>
-        </div>
-      </div>
-      <!-- Service 9 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card service-card h-100">
-          <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80" class="service-img" alt="One-on-One Video Consultation">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-2"><span class="service-emoji">📞</span><h5 class="card-title mb-0">One-on-One Video Consultation</h5></div>
-            <div class="price mb-2">₹499 <span class="text-muted" style="font-size:0.9rem;">(30 minutes)</span></div>
-            <p class="card-text">Personalized live consultation with Dr. Aswath. Discuss your farming/gardening goals and get instant solutions.</p>
-            <div class="mb-2">
-              <span class="badge">Personal Advice</span>
-              <span class="badge">Online Gardening Help</span>
-            </div>
-            <button class="btn book-btn w-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-service="One-on-One Video Consultation">Book Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h2 class="section-title text-center mb-5" style="color:#388e3c; font-weight:700;">Our Services</h2>
+    <div class="row g-4" id="service-cards"></div>
   </section>
 
-  <!-- Booking Modal -->
-  <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <!-- Modal for Service Details -->
+  <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="bookModalLabel">Book a Service</h5>
+          <h5 class="modal-title" id="serviceModalLabel"></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="service" class="form-label">Preferred Service</label>
-              <input type="text" class="form-control" id="service" readonly>
-            </div>
-            <div class="mb-3">
-              <label for="date" class="form-label">Preferred Date</label>
-              <input type="date" class="form-control" id="date" required>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-success">Submit</button>
-          </div>
-        </form>
+        <div class="modal-body" id="serviceModalBody"></div>
+        <div class="modal-footer">
+          <a href="contact.html" class="btn btn-success">Contact Us</a>
+        </div>
       </div>
     </div>
   </div>
@@ -241,22 +103,226 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script>
-    // GSAP animation for cards
-    gsap.from('.service-card', {
-      duration: 1,
-      y: 40,
-      opacity: 0,
-      stagger: 0.12,
-      ease: 'power2.out'
-    });
-    // Fill modal service field
-    document.querySelectorAll('.book-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.getElementById('service').value = this.getAttribute('data-service');
-      });
-    });
+const services = [
+  {
+    title: "One-on-One Video Consultation",
+    short: "Personalized live consultation with our expert.",
+    details: "Book a video call to discuss your farming/gardening goals and get instant solutions.",
+    icon: "phone",
+    image: "images/placeholder.jpg",
+    moreInfo: [
+      "Personalized crop advice",
+      "Soil and water queries",
+      "Pest and disease troubleshooting",
+      "Organic certification guidance",
+      "Business planning"
+    ]
+  },
+  {
+    title: "Terrace gardening ",
+    short: "Turn your rooftop into a fresh green garden for vegetables and fruits..",
+    details: "Why you need us: Without proper setup, terrace gardens fail quickly. Our expert guidance ensures healthy plants, better yields, and long-lasting rooftop gardens.",
+    image: "images/terrace1.jpg",
+    moreInfo: [
+      "Why terrace grading?",
+      "Tips to set up",
+      "Types of containers and media and their availability",
+      "How to maintain pH and EC of media and water",
+      "Types of fertilizers ? how and when to apply",
+      "Different types of seeds and their availability",
+      "How to regulate Light and Shade",
+      "Calendar of sowing of different types of vegetables",
+      "How to pollinate",
+      "Pests and diseases – how to control them",
+      "How and when to Harvest"
+    ]
+  },
+  {
+    title: "Vertical Gardening Consultation",
+    short: "Grow more in less space with modern vertical garden systems.",
+    details: "Vertical gardening requires technical know-how for stability, water, and nutrient management. Our solutions make your walls and balconies thrive with greenery.",
+    icon: "flask-round",
+    image: "images/vartical.jpg",
+    moreInfo: [
+      "\tHow to setup VG both for Home and Commercial",
+      "\tTypes of VG ,Media types ",
+      " What crops to grow based on seasons ",
+      " Different Irrigation types including Wick Irrigation ",
+      " Fertigation ",
+      " Pest and Disease and control ",
+      " Light and shade management.",
+      " Where to market "
+    ]
+  },
+  {
+    title: "Hydroponics Design & Guidance",
+    short: "Soil-free farming with water-based nutrient systems.",
+    details: "Hydroponics fails without correct nutrient balance and design. We ensure the right setup and continuous guidance for sustainable results.",
+    icon: "droplets",
+    image: "images/hydroponics.jpg",
+    moreInfo: [
+      "\tDifferent designs of hydroponics , Aeroponics , Cacophonous , and Aquaponics ",
+      "How to set up bothn for home and commertial.",
+      "\tWhat crops to grow based on seasons ",
+      "Different Irrigation types including Wick Irrigation ",
+      "Fertigation ",
+      "Pest and Disease and control ",
+      "Light and shade management.",
+      "Where to market "
+    ]
+  },
+  {
+    title: "Polyhouse Flower Cultivation",
+    short: "Protected farming for higher yield and year-round crops.",
+    details: "polyhouse farming needs expert management of climate, pests, and water. Our knowledge helps you avoid losses and achieve consistent profits.",
+    image: "images/Polyhouse-Rose-Cultivation.jpg",
+    moreInfo: [
+      "setting up of natural and fan and pad system of polyhouses. Including project preparation for bank loans.",
+      "Completely automated system for fertigation, PH and EC for entire crop cycle.",
+      "growing of capsicum, beans , rose, gerbera, carnation, lily, Gyposophilla, hydrangea, chrysanthemum and any other tailor made crops .",
+      "control of pest and diseases.",
+      "Light and shade management.",
+      "soil and Soilless cultivation .",
+      "maket intelligence across nation .",
+      "subcide claims from gov .",
+      "cold storage set ups."
+    ]
+  },
+  {
+    title: "Orchard Development Plan   (fruit garden)",
+    short: "Plan and grow a productive fruit orchard scientifically.",
+    details: "Orchard mistakes can take years to fix. With our planning, you save time, reduce costs, and get better fruit yield from the start.",
+    icon: "grape",
+    image: "images/3.webp",
+    moreInfo: [
+    "setting up of fruit , plantation crops and spice crop orchards  on climate ,soil ,water, and location .",
+    "complets Good Agricultural Practices with End to end Solutions .",
+    "cultivation orchards by natural farming ,  organic and inorganic methods ",
+    "Fruit crops like banana , mango , guava ,sapota , lichi, avocado , jamun , jackfruit, dragon fruit , papaya ,and under utilized fruits  plantation crops like coconut , arecanut .spice crop like pepper and  cardamum, commercial crops like – tea and coffee .  ",
+    "Uses of Drone with Advanced AI Technologies for good maintenance .",
+    " licencing and production of bio fertilizers and bio pesticides."
+    ]
+  },
+  {
+    title: "Pest & Disease Control Advisory",
+    short: "Eco-friendly solutions for healthy crops.",
+    details: "Wrong pesticide use harms crops, soil, and health. Our expert advice ensures effective control while protecting the environment.",
+    icon: "bug",
+    image: "images/Pest & Disease Control Advisory2.jpg",
+    moreInfo: [
+    "Pest and devices controls for existing orchards trough organic and inorganic methods .",
+    "Safe food production  trough biological control .",
+    "Quarantine advisory for export .",
+    "Production of bio-pesticides .",
+    "Licencing of bio pesticides from ICAR and Agri-universities ."
+    ]
+  },
+  {
+    title: "vegetables and flowers production.",
+    short: "Scientific help to grow fresh vegetables and flowers.",
+    details: "Why you need us: Choosing the wrong seeds or practices reduces yield. Our expertise ensures successful production with better quality and profits.",
+    image: "images/vegandfruits.jpg",
+    moreInfo: [
+    "Production of different vegetables like :- ",
+            "tomato" ," capsicum "," chillis "," gourds "," beans "," ladyfinger ","carrots ","cabbage and broccoli ","and all types of leafy vegetables both imagining and organic way .", 
+            "Production of different flowers like :",
+                         " roses "," tuberose"," chrysanthemum","dahlia"," crossAndra "," Jasmin ","champak and many other crops including foliage Ornamental crops .",
+            "End to end solution starting from sowing to harvesting ."
+    ]
+  },
+  {
+    title: "Tissue Culture",
+    short: "Quality planting material through tissue culture plants.",
+    details: "Farmers often struggle with diseased or low-quality planting material. We provide reliable tissue culture plants for better success.",
+    icon: "globe",
+    image: "images/Tissue Culture.webp",
+    moreInfo: [
+      "complete project on setting up  of lab and hardening units from 1 million to 10 million plant production unit for crops like :"," banana , pineapple , strawberry , blueberry , gerbera , orchids ,anthurium , and foliage ornamentals .",
+      "project preparation for loan from nationalised banks.",
+      "Advisory subsidy claims from the gov.",
+      "market intelligence for marking of exagar and hardened plants",
+      "setting up of bio reactor production of planting materials  like: banana , ",
+      "custom made R&D projects on any crops ."
+    ]
+  },
+  {
+    title: "Mushroom Production",
+    short: "Learn to grow mushrooms for food and business..",
+    details: "Mushroom farming is highly sensitive to climate and hygiene. Our guidance helps you avoid contamination and achieve steady income..",
+    icon: "mushroom",
+    image: "images/mushrooms.webp",
+    moreInfo: [
+      "Types of mushrooms",
+      "Substrate preparation",
+      "Spawn inoculation",
+      "Environmental control",
+      "Harvesting and marketing"
+    ]
+  },
+  {
+    title: "Testing of Bio Stimulants / Pesticides / PGPRs / New Agri Products",
+    short: "Scientific testing of new farm products in real fields.",
+    details: "Without scientific testing, farmers risk using unsafe or ineffective products. Our trials provide trustworthy data before use.",
+    icon: "test-tube",
+    image: "images/biotesting.jpg",
+    moreInfo: [
+    "Designing and implementing field trials as per ICAR / CIB & RC / OECD guidelines.",
+    "Testing under real farming conditions across multiple locations and crops.",
+    "Comparative trials against control and standard treatments.",
+    "Yield and quality assessment before and after application.",
+    "Performance analysis across different agro-climatic zones.",
+    "Tailor-made protocols depending on crop stage, dosage, and application method.",
+    "Detailed scientific reports with visual documentation ."
+    ]
+  },
+  {
+    title: "Facilitating Processing & Value Addition",
+    short: "Adding value to surplus farm produce.",
+    details: "Farmers lose income when produce spoils. With our processing guidance, they earn more by turning excess produce into market-ready products.",
+    icon: "phone",
+    image: "images/Facilitating Processing & Value Addition.jpg",
+    moreInfo: [
+      "Facilitate Processing : We connect farmers with processing units, food technologists, and packaging facilities to transform fresh produce into products like:",
+      "\tJams, jellies, and preserves",
+      "Pickles, sauces, and chutneys",
+      "Dehydrated fruits & vegetables",
+      "Ready-to-eat snacks & beverages"
+    ]
+  }
+];
+
+const cardsContainer = document.getElementById('service-cards');
+cardsContainer.innerHTML = services.map((s, i) => `
+  <div class="col-lg-4 col-md-6">
+    <div class="card service-card h-100 d-flex flex-column align-items-center text-center">
+      <img src="${s.image || 'images/placeholder.jpg'}" alt="${s.title}" class="card-image">
+      <div class="service-icon mt-4"><i class="lucide lucide-${s.icon}"></i></div>
+      <div class="card-body flex-grow-1 d-flex flex-column">
+        <h5 class="card-title mb-2">${s.title}</h5>
+        <p class="card-text mb-3">${s.short}</p>
+        <button class="btn learn-btn mt-auto w-100" type="button" data-index="${i}" data-bs-toggle="modal" data-bs-target="#serviceModal">Learn More</button>
+      </div>
+    </div>
+  </div>
+`).join('');
+
+// Modal logic
+const serviceModal = document.getElementById('serviceModal');
+serviceModal.addEventListener('show.bs.modal', function (event) {
+  const button = event.relatedTarget;
+  const idx = button.getAttribute('data-index');
+  const service = services[idx];
+  document.getElementById('serviceModalLabel').textContent = service.title;
+  document.getElementById('serviceModalBody').innerHTML = `
+    <div style="color:#388e3c; font-weight:500; margin-bottom:1rem;">${service.details}</div>
+    ${service.moreInfo && service.moreInfo.length ? `
+      <ol class="mt-3 text-start" style="color:#2e7d32;">
+        ${service.moreInfo.map(item => `<li>${item}</li>`).join('')}
+      </ol>
+    ` : ''}
+  `;
+});
   </script>
 </body>
 </html> 
