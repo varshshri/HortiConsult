@@ -1,0 +1,8 @@
+# Netlify redirects file
+# This ensures all routes work properly for a static site
+
+# Handle 404s by redirecting to index.html
+/*    /index.html   200
+
+# Optional: Redirect old URLs to new ones (add as needed)
+# /old-page    /new-page    301

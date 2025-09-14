@@ -86,19 +86,3 @@ footer {
     text-align: center;
   }
 } 
-.service-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.service-card h2 {
-  color: #2a7a3b;
-  margin-bottom: 10px;
-}
-
-.service-card ul {
-  margin-left: 20px;
-}
