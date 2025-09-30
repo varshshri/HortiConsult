@@ -48,53 +48,149 @@
     </div>
   </nav>
 
+  <!-- Hero Section -->
+  <section class="py-5" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold text-success mb-3">Get in Touch</h1>
+      <p class="lead text-muted">Ready to transform your garden or farm? Let's discuss your horticulture needs!</p>
+    </div>
+  </section>
+
   <section class="container py-5">
-    <h2 class="section-title text-center">Contact Us</h2>
     <div class="row">
-      <div class="col-md-6">
-        <form id="contact-form">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name*</label>
-            <input type="text" class="form-control" id="name" required>
+      <!-- Contact Form -->
+      <div class="col-lg-8">
+        <div class="card shadow-lg border-0" style="border-radius: 20px;">
+          <div class="card-header bg-success text-white text-center py-4" style="border-radius: 20px 20px 0 0;">
+            <h3 class="mb-0">📧 Contact Form</h3>
+            <p class="mb-0 mt-2">We'll get back to you within 24 hours</p>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email*</label>
-            <input type="email" class="form-control" id="email" required>
+          <div class="card-body p-5">
+            <form id="contact-form">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="name" class="form-label fw-bold">Full Name *</label>
+                  <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your full name" required style="border-radius: 10px; border: 2px solid #e9ecef;">
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="email" class="form-label fw-bold">Email Address *</label>
+                  <input type="email" class="form-control form-control-lg" id="email" placeholder="your.email@example.com" required style="border-radius: 10px; border: 2px solid #e9ecef;">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="phone" class="form-label fw-bold">Phone Number</label>
+                  <input type="tel" class="form-control form-control-lg" id="phone" placeholder="+91 98765 43210" style="border-radius: 10px; border: 2px solid #e9ecef;">
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="subject" class="form-label fw-bold">Subject *</label>
+                  <select class="form-select form-select-lg" id="subject" required style="border-radius: 10px; border: 2px solid #e9ecef;">
+                    <option value="">Select a topic</option>
+                    <option value="consultation">Book Consultation</option>
+                    <option value="services">Services Inquiry</option>
+                    <option value="products">Product Information</option>
+                    <option value="general">General Question</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label fw-bold">Your Message *</label>
+                <textarea class="form-control" id="message" rows="6" placeholder="Tell us about your horticulture needs, project details, or any questions you have..." required style="border-radius: 10px; border: 2px solid #e9ecef; resize: vertical;"></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-success btn-lg px-5 py-3" style="border-radius: 50px; font-weight: 600;">
+                  📤 Send Email
+                </button>
+              </div>
+            </form>
           </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Phone*</label>
-            <input type="tel" class="form-control" id="phone" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message*</label>
-            <textarea class="form-control" id="message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-success">Send Message</button>
-        </form>
-        <div class="mt-3">
-          <button class="btn btn-primary me-2">Book a Slot</button>
-          <button class="btn btn-warning">Pay Now</button>
-        </div>
-        <div class="mt-3">
-          <p><strong>Consultation Options:</strong></p>
-          <ul>
-            <li>In-person consultation (based on location)</li>
-            <li>Video call consultation (paid)</li>
-          </ul>
         </div>
       </div>
-      <div class="col-md-6">
-        <h5>Our Location</h5>
-        <div class="ratio ratio-16x9 mb-3" id="contact-map">
-          <iframe src="https://maps.google.com/maps?q=Indian%20Institute%20of%20Horticultural%20Research&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
+
+      <!-- Contact Information -->
+      <div class="col-lg-4">
+        <div class="card shadow-lg border-0 h-100" style="border-radius: 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+          <div class="card-body p-4 text-center">
+            <h4 class="text-success mb-4">📬 Contact Information</h4>
+            
+            <!-- Email Section -->
+            <div class="mb-4 p-3" style="background: white; border-radius: 15px; border: 2px solid #4caf50;">
+              <div class="mb-2">
+                <i class="fas fa-envelope text-success" style="font-size: 2rem;"></i>
+              </div>
+              <h5 class="text-success mb-2">Email Us</h5>
+              <p class="mb-2">Send us an email anytime</p>
+              <a href="mailto:horticonsultants007@gmail.com" class="btn btn-outline-success btn-sm">
+                horticonsultants007@gmail.com
+              </a>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="mb-4 p-3" style="background: white; border-radius: 15px;">
+              <h5 class="text-success mb-3">Quick Actions</h5>
+              <div class="d-grid gap-2">
+                <a href="booking.html" class="btn btn-success">
+                  📅 Book Consultation
+                </a>
+                <a href="services.html" class="btn btn-outline-success">
+                  🔍 View Services
+                </a>
+                <a href="products.html" class="btn btn-outline-success">
+                  🛒 Browse Products
+                </a>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="p-3" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px;">
+              <h6 class="text-success mb-2">⏰ Response Time</h6>
+              <p class="mb-0 small">We typically respond within 24 hours during business days.</p>
+            </div>
+          </div>
         </div>
-        <p>
-          ICAR – Indian Institute of Horticultural Research (IIHR), Bengaluru, India
-        </p>
       </div>
     </div>
-    <div class="text-end mt-3">
-      <small class="text-muted">This page uses Bootstrap for styling and GSAP for animations.</small>
+
+    <!-- Additional Information -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card border-0" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 20px;">
+          <div class="card-body p-4 text-center">
+            <h4 class="text-success mb-3">🌱 Why Choose Our Consultation?</h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <div class="text-center">
+                  <div class="mb-2" style="font-size: 2rem;">🎓</div>
+                  <h6>Expert Team</h6>
+                  <p class="small">35+ years experience</p>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="text-center">
+                  <div class="mb-2" style="font-size: 2rem;">🔬</div>
+                  <h6>Science-Based</h6>
+                  <p class="small">Research-backed solutions</p>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="text-center">
+                  <div class="mb-2" style="font-size: 2rem;">🌍</div>
+                  <h6>Global Experience</h6>
+                  <p class="small">South Korea, Japan, India</p>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="text-center">
+                  <div class="mb-2" style="font-size: 2rem;">💡</div>
+                  <h6>Personalized</h6>
+                  <p class="small">Tailored to your needs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -106,8 +202,11 @@
   <!-- GSAP Animation Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script>
-    gsap.from("#contact-form", {duration: 1, x: -60, opacity: 0, ease: "power2.out"});
-    gsap.from("#contact-map", {duration: 1, x: 60, opacity: 0, delay: 0.5, ease: "power2.out"});
+    // GSAP Animations for new contact design
+    gsap.from("#contact-form", {duration: 1, y: 50, opacity: 0, ease: "power2.out"});
+    gsap.from(".card", {duration: 1, y: 30, opacity: 0, stagger: 0.2, delay: 0.3, ease: "power2.out"});
+    gsap.from(".display-4", {duration: 1, y: -30, opacity: 0, ease: "power2.out"});
+    gsap.from(".lead", {duration: 1, y: 30, opacity: 0, delay: 0.2, ease: "power2.out"});
   </script>
 </body>
 </html> 

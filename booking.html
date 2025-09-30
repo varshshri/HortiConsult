@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Consultation | Horticulture Consultancy - HortiConsult</title>
+    <meta name="description" content="Book your expert horticulture consultation session. Pay ₹499 via UPI and get instant access to our certified horticulturists.">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as your other pages) -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: #4caf50;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">HortiConsult</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Content -->
+    <div class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+        <div class="container mx-auto px-4 py-12">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-green-800 mb-4">🌱 Book Your Consultation</h1>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Get expert advice for your garden and plants from certified horticulturists. 
+                    Book your personalized consultation session today!
+                </p>
+            </div>
+
+            <!-- Consultation Package Card -->
+            <div id="consultationCard" class="max-w-md mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-6 text-white text-center">
+                    <h2 class="text-2xl font-bold mb-2">Expert Consultation</h2>
+                    <p class="text-green-100">60-minute personalized session</p>
+                </div>
+                
+                <div class="p-8">
+                    <!-- Features -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-gray-700">Plant disease diagnosis</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-gray-700">Garden planning & design</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-gray-700">Soil analysis recommendations</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-gray-700">Seasonal care guidance</span>
+                        </div>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="text-center mb-8">
+                        <div class="text-3xl font-bold text-gray-800">₹499</div>
+                        <div class="text-gray-500">One-time consultation fee</div>
+                    </div>
+
+                    <!-- Book Now Button -->
+                    <button 
+                        id="bookNowBtn" 
+                        class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-4 px-6 rounded-xl transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    >
+                        Book Now - ₹499
+                    </button>
+
+                    <!-- Payment Notice -->
+                    <div class="mt-6 text-center">
+                        <p class="text-sm text-gray-500 flex items-center justify-center space-x-2">
+                            <span>💳</span>
+                            <span>Pay via UPI and get instant access</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Section (Initially Hidden) -->
+            <div id="paymentSection" class="max-w-md mx-auto mt-8 hidden">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 text-white text-center">
+                        <h2 class="text-2xl font-bold mb-2">Pay ₹499 to Get Consultant's Number</h2>
+                        <p class="text-blue-100">Scan QR or use UPI ID below</p>
+                    </div>
+                    
+                    <div class="p-8 text-center">
+                        <!-- QR Code -->
+                        <div class="mb-6">
+                            <div class="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
+                                <p class="text-red-700 font-semibold text-sm mb-2">⚠️ IMPORTANT: Payment Amount Validation</p>
+                                <p class="text-red-600 text-xs">
+                                    • Amount must be EXACTLY ₹499<br>
+                                    • Do NOT change the amount when paying<br>
+                                    • Wrong amounts will be refunded and booking cancelled
+                                </p>
+                            </div>
+                            <img 
+                                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9902522229@ybl&pn=HortiConsult-Consultation&am=499&cu=INR" 
+                                alt="UPI QR Code - ₹499 Only" 
+                                class="mx-auto rounded-lg shadow-md border-2 border-green-500"
+                            >
+                            <p class="text-green-700 font-bold text-lg mt-2">Amount: ₹499 ONLY</p>
+                        </div>
+
+                        <!-- UPI ID -->
+                        <div class="mb-6">
+                            <p class="text-gray-600 mb-2">UPI ID:</p>
+                            <div class="bg-gray-50 rounded-lg p-3 flex items-center justify-between">
+                                <span id="upiId" class="font-mono text-lg">9902522229@ybl</span>
+                                <button 
+                                    id="copyUpiBtn" 
+                                    class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm transition duration-200"
+                                >
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Instructions -->
+                        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                            <p class="text-sm text-gray-700 mb-3">
+                                <strong>📱 After payment, send screenshot on WhatsApp with:</strong>
+                            </p>
+                            <ul class="text-xs text-gray-600 text-left list-disc list-inside space-y-1">
+                                <li>Payment screenshot showing ₹499</li>
+                                <li>Transaction ID/Reference number</li>
+                                <li>Your name and phone number</li>
+                            </ul>
+                        </div>
+
+                        <!-- WhatsApp Button -->
+                        <a 
+                            href="https://wa.me/919902522229?text=Hi%2C%20I%20have%20paid%20EXACTLY%20%E2%82%B9499%20for%20horticulture%20consultation.%0A%0APayment%20Details%3A%0A-%20Amount%3A%20%E2%82%B9499%0A-%20Transaction%20ID%3A%20%5BYour%20Transaction%20ID%5D%0A-%20Name%3A%20%5BYour%20Name%5D%0A-%20Phone%3A%20%5BYour%20Phone%5D%0A%0APlease%20find%20the%20payment%20screenshot%20attached." 
+                            target="_blank"
+                            class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-6 rounded-xl transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                        >
+                            <span>💬</span>
+                            <span>Send Payment Proof</span>
+                        </a>
+
+                        <!-- Back Button -->
+                        <button 
+                            id="backBtn" 
+                            class="mt-4 text-gray-500 hover:text-gray-700 underline"
+                        >
+                            ← Back to Booking
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Validation Policy -->
+            <div class="max-w-md mx-auto mt-6">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h4 class="text-blue-800 font-semibold mb-2">🔒 Payment Validation Policy</h4>
+                    <ul class="text-blue-700 text-sm space-y-1">
+                        <li>✅ Only ₹499 payments will be accepted</li>
+                        <li>❌ Payments of other amounts will be refunded</li>
+                        <li>⏱️ Verification within 2-4 hours during business hours</li>
+                        <li>📞 Consultant details shared after amount verification</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div id="additionalInfo" class="text-center mt-6 text-gray-600">
+                <p class="text-sm">
+                    After payment verification, you'll receive consultant contact details to schedule your session.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="text-center py-3" style="background:#8d6e63; color:#fff;">&copy; 2024 HortiConsult. All rights reserved.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // UPI ID
+        const UPI_ID = '9902522229@ybl';
+
+        // Get DOM elements
+        const bookNowBtn = document.getElementById('bookNowBtn');
+        const paymentSection = document.getElementById('paymentSection');
+        const copyUpiBtn = document.getElementById('copyUpiBtn');
+        const backBtn = document.getElementById('backBtn');
+        const additionalInfo = document.getElementById('additionalInfo');
+        const consultationCard = document.getElementById('consultationCard');
+
+        // Book Now button click handler
+        bookNowBtn.addEventListener('click', function() {
+            // Show payment section with animation (keep home page visible)
+            paymentSection.classList.remove('hidden');
+            paymentSection.style.opacity = '0';
+            paymentSection.style.transform = 'translateY(20px)';
+            
+            // Smooth scroll to payment section
+            setTimeout(() => {
+                paymentSection.style.transition = 'all 0.5s ease-out';
+                paymentSection.style.opacity = '1';
+                paymentSection.style.transform = 'translateY(0)';
+                
+                // Scroll to payment section smoothly
+                paymentSection.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }, 100);
+        });
+
+        // Copy UPI ID functionality
+        copyUpiBtn.addEventListener('click', async function() {
+            try {
+                await navigator.clipboard.writeText(UPI_ID);
+                
+                // Show success feedback
+                const originalText = copyUpiBtn.textContent;
+                copyUpiBtn.textContent = 'Copied!';
+                copyUpiBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+                copyUpiBtn.classList.add('bg-blue-500');
+                
+                setTimeout(() => {
+                    copyUpiBtn.textContent = originalText;
+                    copyUpiBtn.classList.remove('bg-blue-500');
+                    copyUpiBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+                }, 2000);
+                
+            } catch (err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = UPI_ID;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                copyUpiBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyUpiBtn.textContent = 'Copy';
+                }, 2000);
+            }
+        });
+
+        // Back button functionality
+        backBtn.addEventListener('click', function() {
+            // Hide payment section with animation
+            paymentSection.style.opacity = '0';
+            paymentSection.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                paymentSection.classList.add('hidden');
+                
+                // Reset styles
+                paymentSection.style.opacity = '';
+                paymentSection.style.transform = '';
+                paymentSection.style.transition = '';
+                
+                // Scroll back to the consultation card
+                consultationCard.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
