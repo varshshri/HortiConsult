@@ -81,6 +81,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center center;
       transition: transform 0.4s ease;
     }
     
@@ -279,12 +280,59 @@
        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
      }
      
-     .team-photo-carousel {
-       width: 100%;
-       height: 300px;
-       object-fit: cover;
-       border-radius: 15px;
-     }
+    .team-photo-carousel {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 15px;
+      background-color: #f8f9fa;
+    }
+    
+    /* Specific styling for Dr. Meera Pandey's photo */
+    .member-photo[alt*="Dr. Meera Pandey"] {
+      object-position: center top;
+    }
+    
+    .team-photo-carousel[alt*="Dr. Meera Pandey"] {
+      object-position: center top;
+    }
+    
+    /* Specific styling for Mr. Naveen's photo */
+    .member-photo[alt*="Mr. Naveen"] {
+      object-position: center center;
+    }
+    
+    .team-photo-carousel[alt*="Mr. Naveen"] {
+      object-position: center center;
+    }
+    
+    /* Specific styling for Dr. Y.T.N. Reddy's photo */
+    .member-photo[alt*="Dr. Y.T.N. Reddy"] {
+      object-position: center center;
+    }
+    
+    .team-photo-carousel[alt*="Dr. Y.T.N. Reddy"] {
+      object-position: center center;
+    }
+    
+    /* Specific styling for Dr. Yogesha's photo */
+    .member-photo[alt*="Dr. Yogesha"] {
+      object-position: center center;
+    }
+    
+    .team-photo-carousel[alt*="Dr. Yogesha"] {
+      object-position: center center;
+    }
+    
+    /* Specific styling for Mr. Bharath's photo */
+    .member-photo[alt*="Mr. Bharath"] {
+      object-position: center center;
+    }
+    
+    .team-photo-carousel[alt*="Mr. Bharath"] {
+      object-position: center center;
+    }
      
      .carousel-indicators {
        bottom: 10px;
@@ -531,7 +579,7 @@
       <div class="col-lg-4 col-md-6 col-sm-12 mb-4" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
         <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#teamModal1" style="display: block !important; visibility: visible !important; opacity: 1 !important; background: #fff !important; border: 2px solid #4caf50 !important; min-height: 400px !important;">
           <div class="member-photo-container" style="position: relative !important; width: 100% !important; height: 200px !important; overflow: hidden !important; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%) !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" alt="Dr. Y.T.N. Reddy" class="member-photo" style="width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
+            <img src="images/YTN.jpg" alt="Dr. Y.T.N. Reddy" class="member-photo" style="width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
             <div class="member-overlay">
               <span class="view-profile">View Profile</span>
             </div>
@@ -570,7 +618,7 @@
       <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
         <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#teamModal3">
           <div class="member-photo-container">
-            <img src="https:" alt="Dr. Yogesha" class="member-photo">
+            <img src="images/YOGESHA.jpg" alt="Dr. Yogesha" class="member-photo">
             <div class="member-overlay">
               <span class="view-profile">View Profile</span>
             </div>
@@ -614,7 +662,7 @@
       <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
         <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#teamModal5">
           <div class="member-photo-container">
-            <img src="C:\Users\varsh\OneDrive\Documents\Horticulture\images\bharath.jpg" alt="Mr. Bharath" class="member-photo">
+            <img src="images/bharath.jpg" alt="Mr. Bharath" class="member-photo">
             <div class="member-overlay">
               <span class="view-profile">View Profile</span>
             </div>
@@ -658,7 +706,7 @@
       <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
         <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#teamModal7">
           <div class="member-photo-container">
-            <img src="https:/" alt="Mr. Naveen" class="member-photo">
+            <img src="images/NAVEEN.jpg" alt="Mr. Naveen" class="member-photo">
             <div class="member-overlay">
               <span class="view-profile">View Profile</span>
             </div>
@@ -702,7 +750,7 @@
       <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
         <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#teamModal9">
           <div class="member-photo-container">
-            <img src="images/Mushrooms.webp" alt="Dr. Meera Pandey" class="member-photo">
+            <img src="images/MEERA PANDE.jpg" alt="Dr. Meera Pandey" class="member-photo">
             <div class="member-overlay">
               <span class="view-profile">View Profile</span>
             </div>
@@ -766,7 +814,7 @@
                  </div>
                  <div class="carousel-inner">
                    <div class="carousel-item active">
-                     <img src="https:" class="d-block w-100 team-photo-carousel" alt="Dr. Y.T.N. Reddy - Professional Photo">
+                     <img src="images/YTN.jpg" class="d-block w-100 team-photo-carousel" alt="Dr. Y.T.N. Reddy - Professional Photo">
                    </div>
                    <div class="carousel-item">
                      <img src="https0" class="d-block w-100 team-photo-carousel" alt="Dr. Y.T.N. Reddy - Field Work">
@@ -925,7 +973,7 @@
                  </div>
                  <div class="carousel-inner">
                    <div class="carousel-item active">
-                     <img src="https:" class="d-block w-100 team-photo-carousel" alt="Dr. Yogesha - Professional Photo">
+                     <img src="images/YOGESHA.jpg" class="d-block w-100 team-photo-carousel" alt="Dr. Yogesha - Professional Photo">
                    </div>
                    <div class="carousel-item">
                      <img src="https:" class="d-block w-100 team-photo-carousel" alt="Dr. Yogesha - Seed Research">
@@ -1065,7 +1113,7 @@ He specializes in developing <b>high-yielding, disease-resistant seed varieties,
                  </div>
                  <div class="carousel-inner">
                    <div class="carousel-item active">
-                     <img src="https:" class="d-block w-100 team-photo-carousel" alt="Mr. Bharath - Professional Photo">
+                     <img src="images/bharath.jpg" class="d-block w-100 team-photo-carousel" alt="Mr. Bharath - Professional Photo">
                    </div>
                    <div class="carousel-item">
                      <img src="https:" class="d-block w-100 team-photo-carousel" alt="Mr. Bharath - Hydroponic Systems">
@@ -1201,7 +1249,7 @@ He specializes in developing <b>high-yielding, disease-resistant seed varieties,
                  </div>
                  <div class="carousel-inner">
                    <div class="carousel-item active">
-                     <img src="https:/" class="d-block w-100 team-photo-carousel" alt="Mr. Naveen - Professional Photo">
+                     <img src="images/NAVEEN.jpg" class="d-block w-100 team-photo-carousel" alt="Mr. Naveen - Professional Photo">
                    </div>
                    <div class="carousel-item">
                      <img src="https:" class="d-block w-100 team-photo-carousel" alt="Mr. Naveen - Landscape Design">
@@ -1338,7 +1386,7 @@ He specializes in developing <b>high-yielding, disease-resistant seed varieties,
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="images/Mushrooms.webp" class="d-block w-100 team-photo-carousel" alt="Dr. Meera Pandey - Professional Photo">
+                    <img src="images/MEERA PANDE.jpg" class="d-block w-100 team-photo-carousel" alt="Dr. Meera Pandey - Professional Photo">
                   </div>
                   <div class="carousel-item">
                     <img src="https://images.0" class="d-block w-100 team-photo-carousel" alt="Dr. Meera Pandey - Mushroom Research">
